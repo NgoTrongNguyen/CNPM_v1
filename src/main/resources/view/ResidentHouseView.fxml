@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="720.0" prefWidth="1280.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ResidentHouseController"
+            stylesheets="@../styles/atlantafx.css"
+            style="-fx-background-color: #f8fafc;">
+
+    <left>
+        <fx:include fx:id="navbar" source="NavbarView.fxml"/>
+    </left>
+
+    <center>
+        <VBox spacing="0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #f8fafc;">
+            <!-- Header -->
+            <VBox spacing="12.0" style="-fx-padding: 20px; -fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;">
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label text="Quản lý Hộ khẩu" styleClass="label-title" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="← Quay lại" onAction="#handleBack" styleClass="button-secondary" prefHeight="32.0" />
+                </HBox>
+
+                <!-- Filters -->
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label text="Căn hộ:" styleClass="label-heading" />
+                    <ComboBox fx:id="houseIdCombo" prefWidth="200.0" promptText="Chọn căn hộ" />
+
+                    <Label text="Cư dân:" styleClass="label-heading" style="-fx-padding: 0 0 0 20;" />
+                    <ComboBox fx:id="residentIdCombo" prefWidth="250.0" promptText="Chọn cư dân (CCCD - Tên)" />
+
+                    <Button fx:id="addButton" text="➕ Thêm vào căn hộ" onAction="#handleAddResident" styleClass="button-primary" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label fx:id="statusLabel" text="" style="-fx-text-fill: #2563eb; -fx-font-size: 11px;" />
+                </HBox>
+            </VBox>
+
+            <!-- Two-Panel Content -->
+            <HBox spacing="16.0" style="-fx-padding: 20px; -fx-background-color: #f8fafc;" VBox.vgrow="ALWAYS">
+                <!-- Left Panel: Residents in House -->
+                <VBox spacing="10.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 16px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" HBox.hgrow="ALWAYS">
+                    <Label text="Danh sách cư dân trong căn hộ" styleClass="label-heading" />
+                    <Label fx:id="selectedHouseLabel" text="(Chưa chọn căn hộ)" styleClass="label-subtitle" />
+                    <TableView fx:id="residentsInHouseTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colResidentId" prefWidth="133.0" text="Mã cư dân (CCCD)" />
+                            <TableColumn fx:id="colResidentName" prefWidth="173.0" text="Họ và tên" />
+                            <TableColumn fx:id="colIsMaster" prefWidth="93.0" text="Vai trò" />
+                            <TableColumn fx:id="colAction" prefWidth="168.0" text="Thao tác" />
+                        </columns>
+                        <placeholder>
+                            <Label text="Chọn một căn hộ để xem danh sách cư dân" />
+                        </placeholder>
+                    </TableView>
+                </VBox>
+
+                <!-- Right Panel: Houses of Resident -->
+                <VBox spacing="10.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 16px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" HBox.hgrow="ALWAYS">
+                    <Label text="Các căn hộ của cư dân" styleClass="label-heading" />
+                    <Label fx:id="selectedResidentLabel" text="(Chưa chọn cư dân)" styleClass="label-subtitle" />
+                    <TableView fx:id="housesOfResidentTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colHouseId" prefWidth="327.0" text="Mã căn hộ (HouseReg ID)" />
+                            <TableColumn fx:id="colResidIsMaster" prefWidth="253.0" text="Vai trò trong căn hộ" />
+                        </columns>
+                        <placeholder>
+                            <Label text="Chọn một cư dân để xem các căn hộ đã đăng ký" />
+                        </placeholder>
+                    </TableView>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

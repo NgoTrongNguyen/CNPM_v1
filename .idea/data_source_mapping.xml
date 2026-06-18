@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/insert_data_ms.sql" value="c51addfa-7db6-438d-ae4a-7c3a4c4b49f0" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/payment_table_mssql.sql" value="c51addfa-7db6-438d-ae4a-7c3a4c4b49f0" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/payment_table_postgresql.sql" value="0f15dc18-22d3-4ecb-9048-b649ce423688" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/schema_mssql.sql" value="c51addfa-7db6-438d-ae4a-7c3a4c4b49f0" />
+  </component>
+</project>

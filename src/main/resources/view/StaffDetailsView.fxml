@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="720.0" prefWidth="1280.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.StaffDetailsController"
+            stylesheets="@../styles/atlantafx.css"
+            style="-fx-background-color: #f8fafc;">
+
+    <left>
+        <fx:include fx:id="navbar" source="NavbarView.fxml"/>
+    </left>
+
+    <center>
+        <VBox spacing="0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #f8fafc;">
+            <!-- Header -->
+            <VBox spacing="12.0" style="-fx-padding: 24px; -fx-background-color: linear-gradient(to right, #1565C0, #42A5F5); -fx-text-fill: white;">
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                        <Label text="Thông tin tài khoản" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                        <Label text="Xem và chỉnh sửa thông tin cá nhân của bạn" style="-fx-font-size: 11px; -fx-text-fill: #BBDEFB;" />
+                    </VBox>
+                    <Button text="← Quay lại" onAction="#handleBack" styleClass="button-ghost" style="-fx-text-fill: white; -fx-border-color: rgba(255,255,255,0.6);" />
+                </HBox>
+
+                <!-- Staff Info Card -->
+                <HBox spacing="20.0" style="-fx-background-color: white; -fx-border-radius: 8; -fx-padding: 16px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);">
+                    <Label text="👤" style="-fx-font-size: 32px;" />
+                    <VBox spacing="8.0">
+                        <HBox spacing="40.0">
+                            <VBox spacing="4.0">
+                                <Label text="Mã nhân viên" styleClass="label-subtitle" />
+                                <Label fx:id="lblStaffId" text="—" style="-fx-text-fill: #1565C0; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                            </VBox>
+                            <VBox spacing="4.0">
+                                <Label text="Vai trò" styleClass="label-subtitle" />
+                                <Label fx:id="lblRole" text="—" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+                            </VBox>
+                            <VBox spacing="4.0">
+                                <Label text="Ngày tạo tài khoản" styleClass="label-subtitle" />
+                                <Label fx:id="lblCreatedAt" text="—" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Content -->
+            <HBox spacing="16.0" style="-fx-padding: 20px; -fx-background-color: #f8fafc;" VBox.vgrow="ALWAYS">
+                <!-- Left Card: Personal Info -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 16px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" prefWidth="500.0">
+                    <Label text="✏️  Thông tin cá nhân" styleClass="label-heading" />
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <javafx.scene.layout.ColumnConstraints minWidth="140" />
+                            <javafx.scene.layout.ColumnConstraints minWidth="280" hgrow="ALWAYS" />
+                        </columnConstraints>
+
+                        <Label text="Họ và tên" styleClass="label-heading" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <TextField fx:id="nameField" promptText="Nhập họ và tên..." GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                        <Label text="Địa chỉ" styleClass="label-heading" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <TextField fx:id="addressField" promptText="Nhập địa chỉ..." GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                    </GridPane>
+
+                    <Label fx:id="infoLabel" text="" wrapText="true" style="-fx-text-fill: #2563eb;" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="💾 Lưu thông tin" onAction="#handleSaveInfo" styleClass="button-success" />
+                </VBox>
+
+                <!-- Right Card: Change Password -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 16px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" prefWidth="500.0">
+                    <Label text="🔒 Đổi mật khẩu" styleClass="label-heading" />
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <javafx.scene.layout.ColumnConstraints minWidth="140" />
+                            <javafx.scene.layout.ColumnConstraints minWidth="280" hgrow="ALWAYS" />
+                        </columnConstraints>
+
+                        <Label text="Mật khẩu hiện tại" styleClass="label-heading" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <PasswordField fx:id="oldPassField" promptText="••••••••" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                        <Label text="Mật khẩu mới" styleClass="label-heading" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <PasswordField fx:id="newPassField" promptText="Tối thiểu 6 ký tự" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                        <Label text="Xác nhận mật khẩu" styleClass="label-heading" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                        <PasswordField fx:id="confirmPassField" promptText="Nhập lại mật khẩu mới" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                    </GridPane>
+
+                    <Label fx:id="passLabel" text="" wrapText="true" style="-fx-text-fill: #dc2626;" />
+                    <Label text="⚠ Mật khẩu cần ít nhất 6 ký tự." styleClass="label-subtitle" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="🔑 Đổi mật khẩu" onAction="#handleChangePassword" styleClass="button-warning" />
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

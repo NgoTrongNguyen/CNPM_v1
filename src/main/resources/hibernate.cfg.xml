@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <mapping class="models.StaffDetail"/>
+        <mapping class="models.Staff"/>
+        <mapping class="models.Resident"/>
+        <mapping class="models.HouseReg"/>
+        <mapping class="models.Apartment"/>
+        <mapping class="models.Receivable"/>
+        <mapping class="models.HouseRecei"/>
+        <mapping class="models.ResidentHouse"/>
+    </session-factory>
+</hibernate-configuration>

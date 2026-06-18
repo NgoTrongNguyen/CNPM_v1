@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="navbar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="260.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 1 0 0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NavbarController" stylesheets="@../styles/atlantafx.css">
+    <!-- Home -->
+    <Button fx:id="homeButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#homeButtonAction" prefHeight="56.0" prefWidth="260.0" text="Trang chủ" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px; -fx-border-width: 0 0 1 0; -fx-border-color: #f1f5f9;">
+        <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../image/home_icon.png" />
+                </image>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <!-- Residents Management -->
+    <VBox spacing="0.0" style="-fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0; -fx-padding: 8px 0;">
+        <Button fx:id="residentButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#residentButtonAction" prefHeight="48.0" prefWidth="260.0" text="Quản lý cư dân" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/can_ho.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="financeButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#financeButtonAction" prefHeight="48.0" prefWidth="260.0" text="Quản lý khoản thu" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/thong_ke.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="statisticsButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#statisticsButtonAction" prefHeight="48.0" prefWidth="260.0" text="Thống kê" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/khoan_thu.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </VBox>
+
+    <!-- Staff & House -->
+    <VBox spacing="0.0" style="-fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0; -fx-padding: 8px 0;">
+        <Button fx:id="staffManagerButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#staffManagerButtonAction" prefHeight="48.0" prefWidth="260.0" text="Quản lý nhân sự" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/ho_khau.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="houseRegButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#houseRegButtonAction" prefHeight="48.0" prefWidth="260.0" text="Quản lý Hộ khẩu" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/ho_khau.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="apartmentButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#apartmentButtonAction" prefHeight="48.0" prefWidth="260.0" text="Quản lý căn hộ" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/can_ho.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </VBox>
+
+    <!-- Account & Logout -->
+    <VBox spacing="0.0" style="-fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0; -fx-padding: 8px 0; -fx-grow: always;" VBox.vgrow="ALWAYS">
+        <Button fx:id="staffDetailButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#staffDetailButtonAction" prefHeight="48.0" prefWidth="260.0" text="Tài khoản" style="-fx-background-color: transparent; -fx-text-fill: #1e293b; -fx-font-size: 12px; -fx-padding: 12px 16px;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/nhan_khau.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <VBox VBox.vgrow="ALWAYS" />
+        <Button fx:id="logoutButton" alignment="TOP_LEFT" graphicTextGap="12.0" onAction="#logoutButtonAction" prefHeight="48.0" prefWidth="260.0" text="Đăng xuất" style="-fx-background-color: #ffebee; -fx-text-fill: #dc2626; -fx-font-size: 12px; -fx-padding: 12px 16px; -fx-border-width: 1 0 0 0; -fx-border-color: #e2e8f0; -fx-cursor: hand;" styleClass="button-danger">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/logout.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </VBox>
+</VBox>

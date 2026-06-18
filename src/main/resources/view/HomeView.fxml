@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.Region?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController" stylesheets="@../styles/atlantafx.css" style="-fx-background-color: #f8fafc;">
+
+    <left>
+        <fx:include fx:id="navbar" source="NavbarView.fxml" />
+    </left>
+
+    <top>
+        <HBox spacing="16.0" style="-fx-background-color: white; -fx-padding: 16px 24px; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;">
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../image/home_icon.png" />
+                </image>
+            </ImageView>
+            <Label text="BlueMoon" styleClass="label-title" style="-fx-text-fill: #1e293b;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="staffDetailButton" text="👤" onAction="#staffDetails" styleClass="button-ghost" style="-fx-font-size: 14px;" />
+            <Button fx:id="logoutButton" text="🚪" onAction="#logout" styleClass="button-danger" style="-fx-font-size: 14px; -fx-padding: 8px 12px;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="24.0" style="-fx-padding: 24px; -fx-background-color: #f8fafc;" VBox.vgrow="ALWAYS">
+            <!-- Greeting -->
+            <VBox spacing="4.0">
+                <Label text="Chào mừng quay trở lại" styleClass="label-heading" />
+                <Label fx:id="staffId" text="Staff_id" styleClass="label-title" style="-fx-text-fill: #2563eb;" />
+            </VBox>
+
+            <!-- Main Menu Grid -->
+            <GridPane hgap="16.0" vgap="16.0" VBox.vgrow="ALWAYS">
+                <columnConstraints>
+                    <javafx.scene.layout.ColumnConstraints hgrow="ALWAYS" minWidth="250.0" percentWidth="25.0" />
+                    <javafx.scene.layout.ColumnConstraints hgrow="ALWAYS" minWidth="250.0" percentWidth="25.0" />
+                    <javafx.scene.layout.ColumnConstraints hgrow="ALWAYS" minWidth="250.0" percentWidth="25.0" />
+                    <javafx.scene.layout.ColumnConstraints hgrow="ALWAYS" minWidth="250.0" percentWidth="25.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <javafx.scene.layout.RowConstraints minHeight="200.0" vgrow="ALWAYS" />
+                </rowConstraints>
+
+                <!-- Residents Card -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 20px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/can_ho.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Quản lý cư dân" styleClass="label-heading" style="-fx-text-fill: #1e293b;" />
+                    <Label text="Theo dõi và quản lý thông tin cư dân" styleClass="label-subtitle" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="Truy cập →" fx:id="residentButton" onAction="#residentButton" styleClass="button-primary" style="-fx-font-size: 12px;" />
+                </VBox>
+
+                <!-- Finance Card -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 20px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/thong_ke.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Quản lý khoản thu" styleClass="label-heading" style="-fx-text-fill: #1e293b;" />
+                    <Label text="Quản lý và theo dõi các khoản thu" styleClass="label-subtitle" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="Truy cập →" fx:id="financeButton" onAction="#financeButton" styleClass="button-success" style="-fx-font-size: 12px;" />
+                </VBox>
+
+                <!-- Statistics Card -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 20px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/khoan_thu.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Thống kê" styleClass="label-heading" style="-fx-text-fill: #1e293b;" />
+                    <Label text="Xem báo cáo và thống kê chi tiết" styleClass="label-subtitle" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="Truy cập →" fx:id="statisticsButton" onAction="#statisticsButton" styleClass="button-info" style="-fx-font-size: 12px;" />
+                </VBox>
+
+                <!-- Staff Management Card -->
+                <VBox spacing="12.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 20px; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 4, 0, 0, 1);" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/ho_khau.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Quản lý nhân sự" styleClass="label-heading" style="-fx-text-fill: #1e293b;" />
+                    <Label text="Quản lý tài khoản và nhân sự" styleClass="label-subtitle" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button text="Truy cập →" fx:id="staffManagerButton" onAction="#staffManagement" styleClass="button-warning" style="-fx-font-size: 12px;" />
+                </VBox>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

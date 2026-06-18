@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController" stylesheets="@../styles/atlantafx.css">
+    <center>
+        <VBox alignment="CENTER" spacing="24.0" style="-fx-background-color: #f8fafc;">
+            <VBox spacing="16.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-radius: 12; -fx-padding: 32; -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2);" maxWidth="400.0">
+
+                <!-- Title -->
+                <Label text="BLUEMOON" styleClass="label-title" style="-fx-text-alignment: center; -fx-alignment: center;"/>
+                <Label text="Quản lý chung cư" styleClass="label-subtitle" style="-fx-text-alignment: center; -fx-alignment: center;"/>
+
+                <!-- Spacer -->
+                <VBox minHeight="16.0"/>
+
+                <!-- Notice -->
+                <Label fx:id="noticeLabel" text="" style="-fx-text-alignment: center; -fx-text-fill: #ea580c;"/>
+
+                <!-- Username -->
+                <VBox spacing="6.0">
+                    <Label text="Mã nhân viên" styleClass="label-heading"/>
+                    <TextField fx:id="userField" promptText="Nhập mã nhân viên" style="-fx-padding: 10px; -fx-font-size: 12px;"/>
+                </VBox>
+
+                <!-- Password -->
+                <VBox spacing="6.0">
+                    <Label text="Mật khẩu" styleClass="label-heading"/>
+                    <PasswordField fx:id="passwordField" promptText="Nhập mật khẩu" style="-fx-padding: 10px; -fx-font-size: 12px;"/>
+                </VBox>
+
+                <!-- Login Button -->
+                <Button fx:id="loginButton" text="Đăng nhập" onAction="#loginButtonAction" styleClass="button-primary" style="-fx-font-size: 13px; -fx-padding: 10px 32px; -fx-min-height: 40; -fx-min-width: 100;"/>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

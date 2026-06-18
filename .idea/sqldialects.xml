@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/insert_data_ms.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/payment_table_mssql.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/payment_table_postgresql.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/DB_Scripts/schema_mssql.sql" dialect="TSQL" />
+  </component>
+</project>

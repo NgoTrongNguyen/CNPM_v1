@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--
+    Dialog "Chi tiết hộ khẩu" — hiển thị thông tin căn hộ đang sống và danh
+    sách thành viên, kèm nút xuất Word.
+    Controller: controllers.HouseRegDetailController
+-->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.HouseRegDetailController"
+      spacing="14" prefWidth="640" prefHeight="560"
+      stylesheets="@../styles/atlantafx.css"
+      style="-fx-background-color: white;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Chi tiết hộ khẩu" styleClass="label-title" />
+
+    <!-- ── Thông tin hộ khẩu ── -->
+    <Label text="Thông tin hộ khẩu" styleClass="label-heading" />
+    <GridPane hgap="10" vgap="6">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints minWidth="140" />
+            <javafx.scene.layout.ColumnConstraints minWidth="300" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Mã hộ khẩu:" styleClass="label-heading" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Label fx:id="lblHouseId" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Ngày đăng ký:" styleClass="label-heading" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <Label fx:id="lblCreatedAt" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <!-- ── Thông tin căn hộ ── -->
+    <Label text="Thông tin căn hộ đang sống" styleClass="label-heading" />
+    <GridPane hgap="10" vgap="6">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints minWidth="140" />
+            <javafx.scene.layout.ColumnConstraints minWidth="300" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Mã căn hộ:" styleClass="label-heading" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Label fx:id="lblApartId" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Số phòng:" styleClass="label-heading" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <Label fx:id="lblRoomNumber" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Diện tích:" styleClass="label-heading" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <Label fx:id="lblArea" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Mô tả:" styleClass="label-heading" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <Label fx:id="lblDescription" text="-" wrapText="true" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <!-- ── Danh sách thành viên ── -->
+    <Label text="Danh sách thành viên" styleClass="label-heading" />
+    <TableView fx:id="memberTable" prefHeight="220">
+        <columns>
+            <TableColumn fx:id="colResidentId" prefWidth="120" text="Mã cư dân" />
+            <TableColumn fx:id="colName" prefWidth="180" text="Họ và tên" />
+            <TableColumn fx:id="colBirthday" prefWidth="100" text="Ngày sinh" />
+            <TableColumn fx:id="colPhone" prefWidth="120" text="SĐT" />
+            <TableColumn fx:id="colRole" prefWidth="100" text="Vai trò" />
+        </columns>
+    </TableView>
+
+    <Label fx:id="infoLabel" text="" wrapText="true" />
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="exportWordButton" text="📄 Xuất Word" onAction="#handleExportWord" styleClass="button-primary" />
+        <Button fx:id="closeButton" text="Đóng" onAction="#handleClose" styleClass="button-secondary" />
+    </HBox>
+
+</VBox>

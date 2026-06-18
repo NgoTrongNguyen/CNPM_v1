@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="420.0" prefWidth="520.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ResidentFormController"
+      spacing="14"
+      stylesheets="@../styles/atlantafx.css"
+      style="-fx-background-color: white;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Thông tin cư dân" styleClass="label-title" />
+
+    <GridPane hgap="10" vgap="12">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints minWidth="150" />
+            <javafx.scene.layout.ColumnConstraints minWidth="280" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="CCCD / Mã cư dân *" styleClass="label-heading" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="idField" promptText="Bắt buộc" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Họ và tên *" styleClass="label-heading" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="nameField" promptText="Bắt buộc" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Ngày sinh" styleClass="label-heading" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <DatePicker fx:id="birthdayPicker" promptText="dd/MM/yyyy" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Số điện thoại" styleClass="label-heading" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="phoneField" promptText="VD: 0901234567" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Địa chỉ" styleClass="label-heading" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <TextField fx:id="addressField" promptText="Địa chỉ chi tiết" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <VBox VBox.vgrow="ALWAYS" />
+
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="Lưu" styleClass="button-success" onAction="#handleSave" />
+        <Button fx:id="cancelButton" text="Huỷ" styleClass="button-secondary" onAction="#handleCancel" />
+    </HBox>
+
+</VBox>

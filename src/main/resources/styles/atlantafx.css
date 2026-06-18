@@ -1,0 +1,233 @@
+/* ============================================================
+   AtlantaFX-inspired Theme for BlueMoon
+   Minimalist, modern, Tailwind/GitHub Primer philosophy
+   ============================================================ */
+
+/* ─── Root ─── */
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1e293b;
+    -fx-background-color: #f8fafc;
+}
+
+/* ─── Buttons ─── */
+.button {
+    -fx-padding: 8px 16px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #2563eb;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border: none;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1d4ed8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-background-color: #1e40af;
+}
+
+.button-primary {
+    -fx-background-color: #2563eb;
+}
+
+.button-primary:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.button-success {
+    -fx-background-color: #16a34a;
+}
+
+.button-success:hover {
+    -fx-background-color: #15803d;
+}
+
+.button-danger {
+    -fx-background-color: #dc2626;
+}
+
+.button-danger:hover {
+    -fx-background-color: #b91c1c;
+}
+
+.button-warning {
+    -fx-background-color: #ea580c;
+}
+
+.button-warning:hover {
+    -fx-background-color: #c2410c;
+}
+
+.button-secondary {
+    -fx-background-color: #64748b;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #475569;
+}
+
+.button-info {
+    -fx-background-color: #0891b2;
+}
+
+.button-info:hover {
+    -fx-background-color: #0e7490;
+}
+
+.button-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2563eb;
+    -fx-border-color: #2563eb;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+}
+
+.button-ghost:hover {
+    -fx-background-color: #eff6ff;
+}
+
+/* ─── TextFields & ComboBox ─── */
+.text-field,
+.combo-box {
+    -fx-padding: 8px 12px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1e293b;
+    -fx-control-inner-background: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-focus-color: #2563eb;
+}
+
+.text-field:focused,
+.combo-box:focused {
+    -fx-border-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.2), 4, 0, 0, 2);
+}
+
+/* ─── Labels ─── */
+.label {
+    -fx-text-fill: #1e293b;
+}
+
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.label-heading {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #334155;
+}
+
+.label-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+/* ─── TableView ─── */
+.table-view {
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-color: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #e2e8f0;
+    -fx-text-fill: #334155;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 10px;
+}
+
+.table-view .table-row-cell {
+    -fx-padding: 8px;
+    -fx-border-color: #f1f5f9;
+    -fx-text-fill: #1e293b;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f8fafc;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+/* ─── Separator ─── */
+.separator {
+    -fx-border-color: #e2e8f0;
+}
+
+/* ─── ScrollPane ─── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar {
+    -fx-font-size: 10px;
+}
+
+/* ─── CheckBox & RadioButton ─── */
+.check-box,
+.radio-button {
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 12px;
+}
+
+.check-box .box,
+.radio-button .radio {
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+}
+
+.check-box:selected .box,
+.radio-button:selected .radio {
+    -fx-background-color: #2563eb;
+    -fx-border-color: #2563eb;
+}
+
+/* ─── PasswordField ─── */
+.password-field {
+    -fx-padding: 8px 12px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1e293b;
+    -fx-control-inner-background: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+}
+
+.password-field:focused {
+    -fx-border-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.2), 4, 0, 0, 2);
+}
+
+/* ─── DatePicker ─── */
+.date-picker {
+    -fx-padding: 8px 12px;
+    -fx-font-size: 12px;
+    -fx-control-inner-background: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+}
+
+.date-picker:focused {
+    -fx-border-color: #2563eb;
+}

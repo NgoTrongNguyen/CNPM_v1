@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Navbar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Navbar</output-path>
+    <root id="archive" name="Navbar.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/controllers/NavbarController.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/view/NavbarView.fxml" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/home_icon.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/can_ho.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/thong_ke.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/khoan_thu.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/ho_khau.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/nhan_khau.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/image/logout.png" />
+    </root>
+  </artifact>
+</component>

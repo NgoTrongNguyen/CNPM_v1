@@ -1,0 +1,54 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- ============================================================
+     Hibernate config — LOCAL (MS SQL Server)
+     Credentials are injected at runtime from .env by DB_manager
+     ============================================================ -->
+<hibernate-configuration>
+    <session-factory>
+        <!-- SQL Server connection settings -->
+        <!-- Driver & Dialect -->
+        <property name="hibernate.connection.driver_class">
+            com.microsoft.sqlserver.jdbc.SQLServerDriver
+        </property>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.SQLServerDialect
+        </property>
+
+        <!-- MY SQL Server connection settings -->
+        <!-- Driver & Dialect -->
+        <!--
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        -->
+
+        <!-- Connection pool (HikariCP) -->
+        <property name="hibernate.connection.provider_class">
+            org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+        </property>
+        <property name="hibernate.hikari.minimumIdle">2</property>
+        <property name="hibernate.hikari.maximumPoolSize">10</property>
+        <property name="hibernate.hikari.idleTimeout">30000</property>
+        <property name="hibernate.hikari.connectionTimeout">30000</property>
+
+        <!-- DDL: validate only — schema is managed by schema_mssql.sql -->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
+
+        <!-- Entity mappings -->
+        <mapping class="models.StaffDetail"/>
+        <mapping class="models.Staff"/>
+        <mapping class="models.Resident"/>
+        <mapping class="models.HouseReg"/>
+        <mapping class="models.Apartment"/>
+        <mapping class="models.Receivable"/>
+        <mapping class="models.HouseRecei"/>
+        <mapping class="models.ResidentHouse"/>
+    </session-factory>
+</hibernate-configuration>
